@@ -1,7 +1,10 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "env": {
-        "VITE_API_URL": "https://netflix-login-clone-zfgr.onrender.com"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
+  ]
 }
