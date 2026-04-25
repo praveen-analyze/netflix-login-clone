@@ -13,9 +13,9 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
   if (req.query.username === username && req.query.userpass === userpass) {
-    res.send(true)
+    res.json(true)
   } else {
-    res.send(false)
+    res.json(false)
   }
 })
 
