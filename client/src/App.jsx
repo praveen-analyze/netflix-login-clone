@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+
 export const App = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState("")
@@ -42,7 +44,7 @@ export const App = () => {
 
     setLoading(true)
     axios
-      .get(`http://localhost:3000/login?username=${user}&userpass=${pass}`)
+      .get(`${API_URL}/login?username=${user}&userpass=${pass}`)
       .then((data) => {
         setLoading(false)
         if (data.data === true) {
@@ -124,6 +126,10 @@ export const App = () => {
 
           <p className="text-gray-400 text-sm mt-4">
             New to Netflix? <span className="text-white cursor-pointer">Sign up</span>
+          </p>
+          <p className=" text-gray-400 text-sm mt-4">
+            Username:praveen |
+            Password:123
           </p>
 
         </div>
