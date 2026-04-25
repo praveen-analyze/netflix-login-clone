@@ -45,9 +45,9 @@ export const App = () => {
     setLoading(true)
     axios
       .get(`${API_URL}/login?username=${user}&userpass=${pass}`)
-      .then((data) => {
+      .then((res) => {
         setLoading(false)
-        if (data.data === true) {
+        if (res.data === true) {
           navigate('/success')
         } else {
           setError("Invalid username or password")
